@@ -10,7 +10,8 @@
     <h4>Main Info</h4>
     <p>Description: <%= @event.description %></p>
 
-    <p> From: <%= @event.starts_at %> Until: <%= @event.ends_at %></p>
+    <p> From: <%= @event.starts_at %></p>
+    <p> Until: <%= @event.ends_at %></p>
     <p> Capacity: <%= @event.capacity %></p>
 
     <!-- About -->
@@ -23,6 +24,12 @@
       <li><%= !@event.includes_food ? ("<s>Food</s>").html_safe : "Food" %></li>
       <li><%= !@event.includes_drinks ? ("<del>Drinks</del>").html_safe : "Drinks" %></li>
     </ul>
+
+    <h4>Categories</h4>
+    <% @categories.each do |category| %>
+    <span class="label label-success"><%= category.name %></span>
+    <% end %>
+
 
   </div>
 
