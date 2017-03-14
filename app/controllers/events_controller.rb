@@ -3,7 +3,7 @@ class EventsController < ApplicationController
   before_action :authenticate_user!, except: [:show]
 
   def index
-    @events = current_user.event
+    @events = current_user.events
   end
 
   def show
